@@ -468,13 +468,9 @@ input:checked + .slider:before {
 }
 /* --- Responsive End--- */
 
-
-
 /*------------------------------------------------ Rak buku end---------------------------------------------*/
 
 /* -----------------------------------------Footer--------------------------------------------- */
-
-
 
 footer{
     min-height: 50px;
@@ -490,6 +486,22 @@ footer{
 
 .fa-heart{
     color: salmon;
+}
+
+footer p{
+    line-height: 30px;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 600;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: .2s;
+}
+footer a:hover{
+    border-bottom: 2px solid var(--font-color);
 }
 
 /* -----------------------------------------Footer End--------------------------------------------- */
