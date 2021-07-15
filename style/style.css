@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Theme */
+:root {
+    --font-color: #161a1a;
+    --secondary-color: rgb(224, 224, 224);
+    --bg-color: #f0f0ff;
+}
+
+[data-theme="dark"] {
+    --font-color: #f0f0ff;
+    --bg-color: #161a1a;
+}
+/* Theme End */
+
 /* -------------------------------------------------Common---------------------------------------------- */
 *{
     box-sizing: border-box;
@@ -10,7 +23,8 @@
 body{
     font-family: Raleway,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
-    background-color: #161a1a;
+    background-color: var(--bg-color);
+    color: var(--font-color);
     min-height: 1000px
 }
 
@@ -34,13 +48,13 @@ section{
 .box-wrapper{
     min-height: 100px;
     padding: 20px;
-    color: white;
-    background-color: #161a1a;
-    border: 1px solid white;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--font-color);
     border-radius:5px;
 }
 @media (min-width:768px){
-    .box-wrapper,.container{
+    .box-wrapper,.container,.header-container{
         width:750px;
     }
     .modal-content{
@@ -48,12 +62,12 @@ section{
     }
 }
 @media (min-width:992px){
-    .box-wrapper,.container{
+    .box-wrapper,.container,.header-container{
         width:970px;
     }
 }
 @media (min-width:1200px){
-    .box-wrapper,.container{
+    .box-wrapper,.container,.header-container{
         width:1170px;
     }
 }
@@ -119,12 +133,12 @@ section{
 .form-group .form-label {
     margin-bottom: 4px;
     font-size: 18;
-    font-weight: lighter;
+    font-weight: 500;
 }
 
 .form-group .form-input[type="text"],.form-group .form-input[type="number"]{
-    background: #161a1a;
-    color: white;
+    background: var(--bg-color);
+    color: var(--font-color);
     border: 2px solid rgb(5, 253, 141);
     outline: none;
     padding: 10px;
@@ -162,7 +176,7 @@ section{
     width: 15px;
     height: 15px;
     border-radius: 2px;
-    background: white;
+    background: var(--secondary-color);
     transition: .3s;
 }
 .form-group .form-input[type="checkbox"]:checked + label:before {
@@ -171,9 +185,9 @@ section{
 .form-group .form-input[type="checkbox"]:checked + label:after {
     content: "";
     position: absolute;
-    left: 3px;
-    top: 7px;
-    background: white;
+    left: 2px;
+    top: 6px;
+    background: var(--secondary-color);
     width: 2px;
     height: 2px;
     box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
@@ -191,30 +205,31 @@ section{
     border: 2px solid rgba(0,255,140,1);
     background-color: rgba(0,255,140,1);
     transition: .5s;
-    color: #161a1a;
+    color: var(--bg-color);
     cursor: pointer;
 }
 
 .btn-submit:hover{
+    color: var(--font-color);
     background-color: rgb(0, 255, 221);
     border: 2px solid rgb(0, 255, 221);
 }
 
 .btn-cancel{
     background-color: transparent;
-    color: white;
+    color: var(--font-color);
     width: 20%;
     padding: 8px;
     margin: 5px 0;
     font-size: 1em;
     border-radius: 5px;
-    border: 2px solid white;
+    border: 2px solid var(--font-color);
     transition: .5s;
     cursor: pointer;
 }
 .btn-cancel:hover{
-    background-color: white;
-    color: black;
+    background-color: var(--font-color);
+    color: var(--bg-color);
 }
 
 /* ---Form End--- */
@@ -237,13 +252,13 @@ section{
   /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #161a1a;
+    background-color: var(--bg-color);
     margin: auto;
     padding: 0;
-    border: 1px solid white;
+    border: 1px solid var(--bg-color);
     border-radius: 5px;
     overflow: hidden;
-    color: white;
+    color: var(--font-color);
     width: 90%;
     padding: 10px 0;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -285,13 +300,88 @@ header{
     min-height: 50px;
     width: 100%;
     padding: 15px 0px;
-    background-color: #161a1a;
+    background-color: var(--bg-color);
     border-bottom: 4px solid transparent;
     border-image: linear-gradient(90deg, rgba(0,255,140,1) 0%, rgba(0,151,255,1) 100%);
     border-image-slice: 1;
-    color: white;
+    color: var(--font-color);
     box-shadow: 0px 1px 5px #494949;
 }
+header .header-container{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.theme-switch-wrapper em{
+    font-size: .8rem;
+    margin: 3px;
+}
+.theme-switch {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 40px;
+}
+  
+.theme-switch input {
+    display:none;
+}
+  
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+  
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 12px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 12px;
+}
+  
+input:checked + .slider {
+    background-color: rgba(0,255,140,1);
+}
+  
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+  
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+@media (max-width:768px) {
+    header h1{
+        font-size: 1.4rem;
+    }
+    header .header-container{
+        padding: 0px 15px;
+    }
+}
+
 /*------------------------------------------------ Header End---------------------------------------------*/
 
 
@@ -310,9 +400,9 @@ header{
     min-height: 100px;
     width: 100%;
     padding: 20px;
-    color: white;
-    background-color: #161a1a;
-    border: 1px solid white;
+    color: var(--font-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--font-color);
     border-radius:5px; 
 }
 .rak-section h2{
@@ -341,7 +431,7 @@ header{
 
 .btn-action{
     background-color: transparent;
-    color: white;
+    color: var(--font-color);
     padding: 8px;
     margin: 5px;
     border-radius: 5px;
@@ -350,7 +440,7 @@ header{
     cursor: pointer;
 }
 .btn-action:hover{
-    color: black;
+    color: var(--bg-color);
     background-color: rgba(0,255,140,1);
 }
 
@@ -390,11 +480,11 @@ footer{
     min-height: 50px;
     width: 100%;
     padding: 15px 0px;
-    background-color: #161a1a;
+    background-color: var(--bg-color);
     border-top: 4px solid transparent;
     border-image: linear-gradient(90deg, rgba(0,255,140,1) 0%, rgba(0,151,255,1) 100%);
     border-image-slice: 1;
-    color: white;
+    color: var(--font-color);
     box-shadow: 0px 1px 5px #494949;
 }
 

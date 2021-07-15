@@ -14,8 +14,15 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="container text-center">
+        <div class="header-container">
             <h1>Bookshelf Apps</h1>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+                <em>Dark Mode</em>
+            </div>
         </div>
     </header>
     <!-- Header End-->
@@ -96,19 +103,14 @@
     <!-- Footer End -->
 
     <!-- Modal Edit -->
-
-    <!-- The Modal -->
     <div id="modal-edit" class="modal">
-
-        <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-body">
                 <h3 class="font-gradient text-center">Edit Buku</h3>
                 <form id="form-edit-buku" action="#" class="form">
                     <div class="form-group field-edit-id">
                         <label for="edit-id" class="form-label">id</label>
-                        <input class="form-input" type="text" id="edit-id" name="idbuku"
-                            placeholder="id buku">
+                        <input class="form-input" type="text" id="edit-id" name="idbuku" placeholder="id buku">
                     </div>
                     <div class="form-group">
                         <label for="edit-judul" class="form-label">Judul</label>
@@ -132,13 +134,13 @@
                 </form>
             </div>
         </div>
-
     </div>
     <!-- Modal Edit End -->
 
     <script src="js/storage.js"></script>
     <script src="js/dom.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 
 </html>
