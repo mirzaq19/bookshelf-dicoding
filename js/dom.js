@@ -15,6 +15,7 @@ function addBook() {
 
     if(newJudul == '' || newPenulis == '' || newTahun == ''){
         alert('Ada kolom yang belum diisi 😊');
+        return;
     }
     
     document.getElementById("input-judul").value = '';
@@ -132,6 +133,10 @@ function addTaskToCompleted(bookItem) {
 
 
 function removeTaskFromCompleted(bookItem) {
+    let statusHapus = confirm('Apa kamu yakin ingin menghapus buku ini?');
+
+    if(!statusHapus) return;
+
     const bookPosition = findBookIndex(bookItem[BOOK_ITEMID]);
     const bookStatus = books[bookPosition].isCompleted;
 
