@@ -140,6 +140,7 @@ function addBookToCompleted(bookItem) {
 function showEditModal(bookItem) {
     const book = findBook(bookItem[BOOK_ITEMID]);
     const modalEdit = document.getElementById('modal-edit');
+    document.body.classList.toggle('overflow');
 
     document.getElementById('edit-id').value = bookItem[BOOK_ITEMID];
     document.getElementById('edit-judul').value = book.title;
@@ -165,6 +166,7 @@ function saveEditBook() {
 
     refreshDataFromBooks();
     modalEdit.style.display = 'none';
+    document.body.classList.toggle('overflow');
 
     updateDataToStorage();
 }

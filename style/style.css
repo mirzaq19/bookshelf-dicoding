@@ -27,6 +27,10 @@ section{
     margin: 20px 0;
 }
 
+.overflow{
+    overflow: hidden;
+}
+
 .box-wrapper{
     min-height: 100px;
     padding: 20px;

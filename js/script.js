@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.btn-cancel').addEventListener('click', function(event){
         event.preventDefault();
         document.querySelector('#modal-edit').style.display = 'none';
+        document.body.classList.toggle('overflow');
     })
 
     if (isStorageExist()) {
