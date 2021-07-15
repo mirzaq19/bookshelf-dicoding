@@ -26,15 +26,18 @@
         <form id="form-input-buku" action="#" class="form">
             <div class="form-group">
                 <label for="input-judul" class="form-label">Judul</label>
-                <input class="form-input" type="text" id="input-judul" name="judul" placeholder="masukkan judul buku...">
+                <input class="form-input" type="text" id="input-judul" name="judul"
+                    placeholder="masukkan judul buku...">
             </div>
             <div class="form-group">
                 <label for="input-penulis" class="form-label">Penulis</label>
-                <input class="form-input" type="text" id="input-penulis" name="penulis" placeholder="masukkan penulis buku...">
+                <input class="form-input" type="text" id="input-penulis" name="penulis"
+                    placeholder="masukkan penulis buku...">
             </div>
             <div class="form-group">
                 <label for="input-tahun" class="form-label">Tahun</label>
-                <input class="form-input" type="number" id="input-tahun" name="tahun" placeholder="masukkan tahun terbit buku...">
+                <input class="form-input" type="number" id="input-tahun" name="tahun"
+                    placeholder="masukkan tahun terbit buku...">
             </div>
             <div class="form-group">
                 <input class="form-input" type="checkbox" id="input-baca" name="baca">
@@ -51,7 +54,8 @@
         <form id="form-search-buku" action="#" class="form">
             <div class="form-group">
                 <label for="input-search" class="form-label">Cari judul buku</label>
-                <input class="form-input" type="text" id="input-search" name="search" placeholder="masukkan judul buku yang dicari...">
+                <input class="form-input" type="text" id="input-search" name="search"
+                    placeholder="masukkan judul buku yang dicari...">
             </div>
             <button type="submit" class="btn-submit"><i class="fas fa-search"></i> Cari buku</button>
             <p>Note: Kosongkan pencarian dan klik cari untuk menampilkan semua daftar buku.</p>
@@ -91,9 +95,50 @@
     </footer>
     <!-- Footer End -->
 
+    <!-- Modal Edit -->
+
+    <!-- The Modal -->
+    <div id="modal-edit" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3 class="font-gradient text-center">Edit Buku</h3>
+                <form id="form-edit-buku" action="#" class="form">
+                    <div class="form-group field-edit-id">
+                        <label for="edit-id" class="form-label">id</label>
+                        <input class="form-input" type="text" id="edit-id" name="idbuku"
+                            placeholder="id buku">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-judul" class="form-label">Judul</label>
+                        <input class="form-input" type="text" id="edit-judul" name="judul"
+                            placeholder="masukkan judul buku...">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-penulis" class="form-label">Penulis</label>
+                        <input class="form-input" type="text" id="edit-penulis" name="penulis"
+                            placeholder="masukkan penulis buku...">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-tahun" class="form-label">Tahun</label>
+                        <input class="form-input" type="number" id="edit-tahun" name="tahun"
+                            placeholder="masukkan tahun terbit buku...">
+                    </div>
+                    <div class="btn-edit-wrapper">
+                        <button type="submit" class="btn-submit"><i class="fas fa-save"></i> Simpan</button>
+                        <button class="btn-cancel">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- Modal Edit End -->
+
     <script src="js/storage.js"></script>
     <script src="js/dom.js"></script>
     <script src="js/script.js"></script>
-
 </body>
+
 </html>

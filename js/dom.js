@@ -62,9 +62,9 @@ function makeBook(newJudul,newPenulis,newTahun,newStatus) {
     btnContainer.classList.add('btn-wrapper');
 
     if (!newStatus)
-        btnContainer.append(createCheckButton(), createTrashButton());
+        btnContainer.append(createCheckButton(), createEditButton(), createTrashButton());
     else
-        btnContainer.append(createUndoButton(), createTrashButton());
+        btnContainer.append(createUndoButton(), createEditButton(), createTrashButton());
 
     const container = document.createElement('div');
     container.classList.add('item');
@@ -91,25 +91,31 @@ function createButton(iconButton, textButton, eventListener) {
 
 function createCheckButton() {
     return createButton('fa-check-circle', 'Selesai baca' , function (event) {
-        addTaskToCompleted(event.target.parentElement.parentElement);
+        addBookToCompleted(event.target.parentElement.parentElement);
+    });
+}
+
+function createEditButton() {
+    return createButton('fa-edit', 'Edit buku' , function (event) {
+        showEditModal(event.target.parentElement.parentElement);
     });
 }
 
 function createTrashButton() {
     return createButton('fa-trash', 'Hapus buku' , function (event) {
-        removeTaskFromCompleted(event.target.parentElement.parentElement);
+        removeBookFromCompleted(event.target.parentElement.parentElement);
     });
 }
 
 function createUndoButton() {
     return createButton('fa-sync-alt', 'Baca ulang' , function (event) {
-        undoTaskFromCompleted(event.target.parentElement.parentElement);
+        undoBookFromCompleted(event.target.parentElement.parentElement);
     });
 }
 
 
 
-function addTaskToCompleted(bookItem) {
+function addBookToCompleted(bookItem) {
     const judul = bookItem.querySelector(".judul").innerText;
     const penulis = bookItem.querySelector(".penulis").innerText;
     const tahun = bookItem.querySelector(".tahun").innerText;
@@ -131,8 +137,40 @@ function addTaskToCompleted(bookItem) {
     showStatusRak();
 }
 
+function showEditModal(bookItem) {
+    const book = findBook(bookItem[BOOK_ITEMID]);
+    const modalEdit = document.getElementById('modal-edit');
 
-function removeTaskFromCompleted(bookItem) {
+    document.getElementById('edit-id').value = bookItem[BOOK_ITEMID];
+    document.getElementById('edit-judul').value = book.title;
+    document.getElementById('edit-penulis').value = book.author;
+    document.getElementById('edit-tahun').value = book.year;
+
+    modalEdit.style.display = 'block';
+}
+
+function saveEditBook() {
+    const modalEdit = document.getElementById('modal-edit');
+
+    const idBook = document.getElementById('edit-id').value;
+    const judul = document.getElementById('edit-judul').value;
+    const penulis = document.getElementById('edit-penulis').value;
+    const tahun = document.getElementById('edit-tahun').value;
+    
+    const bookPosition = findBookIndex(parseInt(idBook));
+
+    books[bookPosition].title = judul;
+    books[bookPosition].author = penulis;
+    books[bookPosition].year = tahun;
+
+    refreshDataFromBooks();
+    modalEdit.style.display = 'none';
+
+    updateDataToStorage();
+}
+
+
+function removeBookFromCompleted(bookItem) {
     let statusHapus = confirm('Apa kamu yakin ingin menghapus buku ini?');
 
     if(!statusHapus) return;
@@ -154,7 +192,7 @@ function removeTaskFromCompleted(bookItem) {
     showStatusRak();
 }
 
-function undoTaskFromCompleted(bookItem) {
+function undoBookFromCompleted(bookItem) {
     const judul = bookItem.querySelector(".judul").innerText;
     const penulis = bookItem.querySelector(".penulis").innerText;
     const tahun = bookItem.querySelector(".tahun").innerText;
@@ -209,7 +247,10 @@ function showStatusRak() {
 
 function refreshDataFromBooks() {
     const listBelumBaca = document.getElementById(BELUMBACA_LIST_ID);
-    let listSudahBaca = document.getElementById(SUDAHBACA_LIST_ID);
+    const listSudahBaca = document.getElementById(SUDAHBACA_LIST_ID);
+
+    listBelumBaca.innerHTML = '';
+    listSudahBaca.innerHTML = '';
 
     SUDAHBACA_COUNT = 0;
     BELUMBACA_COUNT = 0;
