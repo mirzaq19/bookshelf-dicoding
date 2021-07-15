@@ -12,6 +12,10 @@ function addBook() {
     const newPenulis = document.getElementById("input-penulis").value;
     const newTahun = document.getElementById("input-tahun").value;
     const newStatus = document.getElementById("input-baca").checked;
+
+    if(newJudul == '' || newPenulis == '' || newTahun == ''){
+        alert('Ada kolom yang belum diisi 😊');
+    }
     
     document.getElementById("input-judul").value = '';
     document.getElementById("input-penulis").value = '';
