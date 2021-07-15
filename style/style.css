@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* -------------------------------------------------Common---------------------------------------------- */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Raleway,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    background-color: #161a1a;
+    min-height: 1000px
+}
+
+/* ---Layout--- */
+
+.container{
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto;
+}
+@media (min-width:768px){
+    .container{
+        width:750px;
+    }
+}
+@media (min-width:992px){
+    .container{
+        width:970px;
+    }
+}@media (min-width:1200px){
+    .container{
+        width:1170px;
+    }
+}
+
+section{
+    margin: 20px 0;
+}
+
+.box-wrapper{
+    min-height: 100px;
+    padding: 20px;
+    color: white;
+    background-color: #161a1a;
+    border: 1px solid white;
+    border-radius:5px;
+}
+@media (min-width:768px){
+    .box-wrapper{
+        width:750px;
+    }
+}
+@media (min-width:992px){
+    .box-wrapper{
+        width:970px;
+    }
+}@media (min-width:1200px){
+    .box-wrapper{
+        width:1170px;
+    }
+}
+/* ---Layout End-- */
+
+
+/* ---Typografi--- */
+.text-center{
+    text-align: center;
+}
+
+.font-gradient{
+    background: -webkit-linear-gradient(60deg, rgba(0,255,140,1) 0%, rgba(0,151,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width:768px){
+    
+    h2.font-gradient{
+        font-size: 1rem;   
+    }
+
+    .form p{
+        font-size: .8rem;
+    }
+    .form-group{
+        font-size: .8rem;
+    }
+    .form-group .form-input[type="text"],.form-group .form-input[type="number"]{
+        padding: 5px !important;
+        font-size: .8rem !important;
+    }
+    .btn-submit{
+        width: 100% !important;
+        font-size: .75rem !important;
+        padding: 6px !important;
+    }
+
+    .list-item h4, .rak-section .counter{
+        font-size: .8rem;
+    }
+
+}
+
+/* ---Typografi End--- */
+
+
+/* ---Form--- */
+.form {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    border-radius: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group .form-label {
+    margin-bottom: 4px;
+    font-size: 18;
+    font-weight: lighter;
+}
+
+.form-group .form-input[type="text"],.form-group .form-input[type="number"]{
+    background: #161a1a;
+    color: white;
+    border: 2px solid rgb(5, 253, 141);
+    outline: none;
+    padding: 10px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    transition: .5s;
+}
+
+.form-group .form-input[type="text"]:focus,.form-group .form-input[type="number"]:focus{
+    border-radius: 5px;
+    border-color: rgba(0,151,255,1);
+}
+
+
+.form-group .form-input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    opacity: 0;
+}
+.form-group .form-input[type="checkbox"] + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+}
+.form-group .form-input[type="checkbox"] + label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    background: white;
+    transition: .3s;
+}
+.form-group .form-input[type="checkbox"]:checked + label:before {
+    background: rgb(5, 253, 141);
+}
+.form-group .form-input[type="checkbox"]:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 7px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+}
+
+.btn-submit {
+    border: 0;
+    margin: 10px 0;
+    width: 20%;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 1em;
+    font-family: Raleway;
+    font-weight: bold;
+    background-color: rgba(0,255,140,1);
+    transition: .5s;
+    color: #161a1a;
+    cursor: pointer;
+}
+
+.btn-submit:hover{
+    background-color: rgb(0, 255, 221);
+}
+/* ---Form End--- */
+/* --------------------------------------------Common End----------------------------------------------------------*/
+
+/* ---------------------------------------------Header-------------------------------------------------- */
+header{
+    min-height: 50px;
+    width: 100%;
+    padding: 15px 0px;
+    background-color: #161a1a;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(90deg, rgba(0,255,140,1) 0%, rgba(0,151,255,1) 100%);
+    border-image-slice: 1;
+    color: white;
+    box-shadow: 0px 1px 5px #494949;
+}
+/*------------------------------------------------ Header End---------------------------------------------*/
+
+
+
+/*------------------------------------------------ Rak buku---------------------------------------------*/
+
+/* ---Rak container--- */
+#rak-buku{
+    display: flex;
+    flex-direction: column;
+    justify-content: inherit;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rak-section{
+    min-height: 100px;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background-color: #161a1a;
+    border: 1px solid white;
+    border-radius:5px; 
+}
+.rak-section h2{
+    padding: 15px;
+}
+/* ---Rak container End--- */
+
+/* ---Item list--- */
+.list-item{
+    padding: 15px 0px;
+}
+
+.list-item .item{
+    line-height: 25px;
+    font-size: .8rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 255, 213);
+    margin-bottom: 10px;
+    transition: .5s;
+}
+
+.btn-wrapper{
+    padding: 10px 0px;
+}
+
+.btn-action{
+    background-color: transparent;
+    color: white;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,255,140,1);
+    transition: .5s;
+    cursor: pointer;
+}
+.btn-action:hover{
+    color: black;
+    background-color: rgba(0,255,140,1);
+}
+
+/* ---Item list End--- */
+
+/* --- Responsive --- */
+@media (min-width:768px){
+    #rak-buku{
+        width:750px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .rak-section{
+        width: 49%;
+    }
+}
+@media (min-width:992px){
+    #rak-buku{
+        width:970px;
+    }
+}@media (min-width:1200px){
+    #rak-buku{
+        width:1170px;
+    }
+}
+/* --- Responsive End--- */
+
+
+
+/*------------------------------------------------ Rak buku end---------------------------------------------*/
+
+/* -----------------------------------------Footer--------------------------------------------- */
+
+
+
+footer{
+    min-height: 50px;
+    width: 100%;
+    padding: 15px 0px;
+    background-color: #161a1a;
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(90deg, rgba(0,255,140,1) 0%, rgba(0,151,255,1) 100%);
+    border-image-slice: 1;
+    color: white;
+    box-shadow: 0px 1px 5px #494949;
+}
+
+.fa-heart{
+    color: salmon;
+}
+
+/* -----------------------------------------Footer End--------------------------------------------- */

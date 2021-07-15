@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icon.png">
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/fbd4858647.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container text-center">
+            <h1>Bookshelf Apps</h1>
+        </div>
+    </header>
+    <!-- Header End-->
+
+    <!-- Form input buku -->
+    <section id="input-buku" class="box-wrapper container">
+        <h2 class="font-gradient text-center">Masukkan Buku Baru</h2>
+        <form id="form-input-buku" action="#" class="form">
+            <div class="form-group">
+                <label for="input-judul" class="form-label">Judul</label>
+                <input class="form-input" type="text" id="input-judul" name="judul" placeholder="masukkan judul buku...">
+            </div>
+            <div class="form-group">
+                <label for="input-penulis" class="form-label">Penulis</label>
+                <input class="form-input" type="text" id="input-penulis" name="penulis" placeholder="masukkan penulis buku...">
+            </div>
+            <div class="form-group">
+                <label for="input-tahun" class="form-label">Tahun</label>
+                <input class="form-input" type="number" id="input-tahun" name="tahun" placeholder="masukkan tahun terbit buku...">
+            </div>
+            <div class="form-group">
+                <input class="form-input" type="checkbox" id="input-baca" name="baca">
+                <label for="input-baca" class="form-label">Sudah dibaca</label>
+            </div>
+            <button type="submit" class="btn-submit">Tambah buku</button>
+        </form>
+    </section>
+    <!-- Form input buku End -->
+
+    <!-- Pencarian buku -->
+    <section id="search-buku" class="box-wrapper container">
+        <h2 class="font-gradient text-center">Silahkan melakukan pencarian buku</h2>
+        <form id="form-search-buku" action="#" class="form">
+            <div class="form-group">
+                <label for="input-search" class="form-label">Cari judul buku</label>
+                <input class="form-input" type="text" id="input-search" name="search" placeholder="masukkan judul buku yang dicari...">
+            </div>
+            <button type="submit" class="btn-submit"><i class="fas fa-search"></i> Cari buku</button>
+            <p>Note: Kosongkan pencarian dan klik cari untuk menampilkan semua daftar buku.</p>
+        </form>
+    </section>
+    <!-- Pencarian buku end -->
+
+    <!-- Rak buku -->
+    <section id="rak-buku">
+        <!-- Belum dibaca -->
+        <section class="rak-section">
+            <h2 class="font-gradient text-center">Buku belum dibaca</h2>
+            <p class="counter">Jumlah: <span id="belum-baca-count">0</span></p>
+            <div class="list-item" id="belum-baca">
+
+            </div>
+        </section>
+        <!-- Belum dibaca End-->
+
+        <!-- Sudah dibaca -->
+        <section class="rak-section">
+            <h2 class="font-gradient text-center">Buku sudah dibaca</h2>
+            <p class="counter">Jumlah: <span id="sudah-baca-count">0</span></p>
+            <div class="list-item" id="sudah-baca">
+
+            </div>
+        </section>
+        <!-- Sudah dibaca End-->
+    </section>
+    <!-- Rak buku End-->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2021 | Created with <i class="fas fa-heart"></i> by M. Auliya Mirzaq Romdloni</p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="js/storage.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
