@@ -6,6 +6,7 @@
     --secondary-color: #c4c4c4;
     --item-border: #00d8b4;
     --btn-action-border: #00da78;
+    --input-border: #08d691;
     --bg-color: #f0f0ff;
 }
 
@@ -14,6 +15,7 @@
     --secondary-color: #e0e0e0;
     --item-border: #00ffd5;
     --btn-action-border: #00ff8c;
+    --input-border: #05fd8d;
     --bg-color: #161a1a;
 }
 /* Theme End */
@@ -144,7 +146,7 @@ section{
 .form-group .form-input[type="text"],.form-group .form-input[type="number"]{
     background: var(--bg-color);
     color: var(--font-color);
-    border: 2px solid rgb(5, 253, 141);
+    border: 2px solid var(--input-border);
     outline: none;
     padding: 10px;
     margin-bottom: 8px;
